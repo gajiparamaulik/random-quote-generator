@@ -21,21 +21,21 @@ function fetchNewQuote() {
 
         let quoteText = data.data.content;
         document.getElementById("setQuote").innerHTML = `“${quoteText}”`;
-        authorName.innerHTML = data.data.author;
-
-        copyToClipboard(data.data.content);
+        authorName.innerHTML = `- ${data.data.author}`;
         successMsg(data.message);
     })
     .catch(error => {
-        console.error("Error:", error);
         errorMsg(error);
     });
 }
 
 function copyToClipboard() {
     let quoteText = document.getElementById("setQuote").innerText;
+    let author = document.getElementById("authorName").innerText;
+    let fullText = `${quoteText} \n${author}`;
+
     let tempInput = document.createElement("textarea");
-    tempInput.value = quoteText;
+    tempInput.value = fullText;
     document.body.appendChild(tempInput);
     tempInput.select();
     document.execCommand("copy");
@@ -49,30 +49,25 @@ function downloadQuoteImage() {
     let backgroundImage = myDiv.style.backgroundImage;
     
     if (!backgroundImage) {
-        console.error("No background image found.");
+        errorMsg("background image found.");
         return;
     }
     
     let imageUrl = backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-    console.log("backgroundImage", backgroundImage);
 
-    // Create an image element
     let img = new Image();
-    img.crossOrigin = "anonymous"; // Try to bypass CORS restrictions
+    img.crossOrigin = "anonymous";
     img.src = imageUrl;
 
     img.onload = function () {
         let canvas = document.createElement("canvas");
         let ctx = canvas.getContext("2d");
 
-        // Set canvas size to image size
         canvas.width = img.width;
         canvas.height = img.height;
 
-        // Draw the image on the canvas
         ctx.drawImage(img, 0, 0);
 
-        // Convert canvas to image and download
         let link = document.createElement("a");
         link.href = canvas.toDataURL("image/png");
         link.download = "quote.png";
@@ -80,17 +75,17 @@ function downloadQuoteImage() {
     };
 
     img.onerror = function () {
-        console.error("Failed to load background image due to CORS.");
+        errorMsg("Failed to load background image due to CORS.");
     };
 }
 
 
 
 function shareQuoteOnTwitter() {
-    let quoteDiv = document.getElementById("myDiv");
+    let quoteDiv = document.getElementById("quoteData");
     
     if (!quoteDiv) {
-        console.error("Element #myDiv not found.");
+        errorMsg("Element #myDiv not found.");
         return;
     }
 
@@ -135,14 +130,3 @@ function errorMsg(message) {
         }, 500);
     }, 3000);
 }
-
-
-
-
-
-
-
-
-
-
-

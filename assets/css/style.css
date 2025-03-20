@@ -63,6 +63,18 @@ nav a {
     padding: 30px;
 }
 
+.demo {
+    position: relative;
+}
+ 
+.test {
+    position: absolute;
+    top: 30px;
+    width: 80%;
+    margin: auto;
+    left: 10%;
+}
+ 
 .quote-area {
     background: #222;
     padding: 15px;
@@ -74,10 +86,13 @@ nav a {
     overflow-wrap: break-word;
     padding: 10px;
     text-align: center;
+    font-size: x-large;
     background-size: cover !important;
     background-repeat: no-repeat, no-repeat;
     background-position: center !important;
     box-shadow: 4px 4px 16px 0 rgba(139, 61, 255, .3), -4px -4px 16px 0 rgba(0, 196, 204, .3);
+    backdrop-filter: saturate(190%) blur(50px);
+    opacity: 0.4;
 }
 
 .text-quote {
@@ -118,7 +133,7 @@ nav a {
 
 .copy-btn {
     align-items: center;
-    background: #007bff;
+    background: #2b543d;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -131,7 +146,7 @@ nav a {
 }
 
 .copy-btn:hover {
-    background: #0056b3;
+    background: #125831;
 }
 
 .copy-btn i {
@@ -200,7 +215,7 @@ nav a {
 .success-message {
     position: fixed;
     top: 70px;
-    right: -300px; /* Initially hidden */
+    right: -300px;
     background-color: #28a745;
     color: white;
     padding: 10px 20px;
@@ -213,13 +228,13 @@ nav a {
 }
 
 .success-message.show {
-    right: 20px; /* Slide in */
+    right: 20px;
 }
 
 .error-message {
     position: fixed;
     top: 70px;
-    right: -300px; /* Initially hidden */
+    right: -300px;
     background-color: #a72828;
     color: white;
     padding: 10px 20px;
@@ -232,5 +247,5 @@ nav a {
 }
 
 .error-message.show {
-    right: 20px; /* Slide in */
+    right: 20px;
 }
