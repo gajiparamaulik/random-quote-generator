@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <nav>
+            <a href="javascript:void(0);">Home</a>
+            <a href="javascript:void(0);">About US</a>
+            <a href="javascript:void(0);">Services</a>
+            <a href="javascript:void(0);">Career</a>
+            <a href="javascript:void(0);">Contact US</a>
+        </nav>
+        <div class="header-buttons">
+            <button class="upgrade" href="javascript:void(0);">Upgrade</button>
+            <button class="signin" href="javascript:void(0);">Sign in</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Quote Generator</h1>
+        </div>
+
+        <div class="quote-area" id="myDiv">
+            <p class="text-quote" id="setQuote"></p>
+            <p id="authorName"></p>
+        </div>
+
+        <div class="new-quote-btn" id="newQuoteBtn" onclick="fetchNewQuote()">
+            <button class="quote-button" id="downloadButton" onclick="downloadQuoteImage()">New Quote</button>
+        </div>
+
+        <div class="button-container">
+            <a class="twitter-button" id="twitterButton" target="_blank" onclick="shareQuoteOnTwitter()" href="#">Share on Twitter</a>
+            <button class="download-button" id="downloadButton" onclick="downloadQuoteImage()">Export as Image</button>
+            <button class="copy-btn" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+        </div>
+
+        </div>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

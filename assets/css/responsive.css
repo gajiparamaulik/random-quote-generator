@@ -1,0 +1,111 @@
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .premium-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .premium-btn {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .input-container,
+    .output-container,
+    .instructions,
+    .premium-banner {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .instructions p {
+        font-size: 14px;
+    }
+
+    .tabs button {
+        font-size: 14px;
+    }
+
+    .input-container textarea {
+        font-size: 14px;
+        height: 60px;
+    }
+
+    .input-container button {
+        font-size: 14px;
+    }
+
+    .output {
+        font-size: 14px;
+    }
+
+    .toast-message {
+        top: 90px;
+    }
+
+    .text-quote {
+        font-size: medium;
+    }
+
+    .quote-button {
+        font-size: 14px;
+        padding: 16px 44px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .instructions {
+        width: 95%;
+    }
+
+    .premium-banner {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .input-container textarea {
+        height: 50px;
+    }
+
+    .input-container button {
+        width: 100%;
+    }
+
+    .output-container {
+        width: 95%;
+    }
+
+    .toast-message {
+        top: 110px;
+    }
+
+    .button-container button {
+        font-size: 12px;
+    }
+
+    .quote-button {
+        font-size: 14px;
+    }
+}
