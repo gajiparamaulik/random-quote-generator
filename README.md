@@ -2,6 +2,10 @@
 
 - A simple and elegant Random Quote Generator that fetches motivational quotes with a random background image. Users can share the quote on Twitter or copy it to their clipboard effortlessly.
 
+## 🚀 Live Demo  
+
+[Click here to view the live project](https://mg-quote-generator.netlify.app/){:target="_blank"}
+
 ## 🚀 Features
 
 1️⃣ Generate a New Quote
