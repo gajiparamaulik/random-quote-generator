@@ -4,7 +4,7 @@
 
 ## 🚀 Live Demo  
 
-[Click here to view the live project](https://mg-quote-generator.netlify.app/){:target="_blank"}
+[Click here to view the live project](https://mg-quote-generator.netlify.app/)
 
 ## 🚀 Features
 
