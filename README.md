@@ -1,6 +1,6 @@
 # Random Quote Generator
 
-- A simple and elegant Random Quote Generator that fetches motivational quotes with a random background image. Users can share the quote on Twitter or copy it to their clipboard effortlessly.
+- A simple and elegant Random Quote Generator that fetches motivational quotes. Users can share the quote on Twitter or copy it to their clipboard effortlessly.
 
 ## 🚀 Live Demo  
 
@@ -11,8 +11,6 @@
 1️⃣ Generate a New Quote
 
 - Click the "New Quote" button to fetch a new motivational quote from the API.
-
-- Each time a quote is fetched, a random background image is also updated for a visually appealing experience.
 
 2️⃣ Share on Twitter
 
