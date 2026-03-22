@@ -17,7 +17,11 @@ function fetchNewQuote() {
     })
     .then(data => {
         let randomImageUrl = `https://random-image-pepebigotes.vercel.app/api/random-image?${new Date().getTime()}`;
-        myDiv.style.backgroundImage = `url(${randomImageUrl})`;
+        mainDiv.style.backgroundImage = `url(${randomImageUrl})`;
+        mainDiv.style.background = `
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url(${randomImageUrl}) center/cover no-repeat
+        `;
 
         let quoteText = data.data.content;
         document.getElementById("setQuote").innerHTML = `“${quoteText}”`;
@@ -44,39 +48,60 @@ function copyToClipboard() {
 }
 
 
+// function downloadQuoteImage() {
+//     let myDiv = document.getElementById("myDiv");
+//     let backgroundImage = myDiv.style.backgroundImage;
+    
+//     if (!backgroundImage) {
+//         errorMsg("background image found.");
+//         return;
+//     }
+    
+//     let imageUrl = backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+
+//     let img = new Image();
+//     img.crossOrigin = "anonymous";
+//     img.src = imageUrl;
+
+//     img.onload = function () {
+//         let canvas = document.createElement("canvas");
+//         let ctx = canvas.getContext("2d");
+
+//         canvas.width = img.width;
+//         canvas.height = img.height;
+
+//         ctx.drawImage(img, 0, 0);
+
+//         let link = document.createElement("a");
+//         link.href = canvas.toDataURL("image/png");
+//         link.download = "quote.png";
+//         link.click();
+//     };
+
+//     img.onerror = function () {
+//         errorMsg("Failed to load background image due to CORS.");
+//     };
+// }
+
 function downloadQuoteImage() {
-    let myDiv = document.getElementById("myDiv");
-    let backgroundImage = myDiv.style.backgroundImage;
-    
-    if (!backgroundImage) {
-        errorMsg("background image found.");
-        return;
-    }
-    
-    let imageUrl = backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-
-    let img = new Image();
-    img.crossOrigin = "anonymous";
-    img.src = imageUrl;
-
-    img.onload = function () {
-        let canvas = document.createElement("canvas");
-        let ctx = canvas.getContext("2d");
-
-        canvas.width = img.width;
-        canvas.height = img.height;
-
-        ctx.drawImage(img, 0, 0);
-
-        let link = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
+    const quoteDiv = document.getElementById("quoteData");
+    quoteDiv.style.backgroundColor = "#000"; 
+    html2canvas(quoteDiv, {
+        backgroundColor: null,
+        useCORS: true,
+        allowTaint: true,
+        scale: 2
+    }).then(canvas => {
+        const link = document.createElement("a");
         link.download = "quote.png";
+        link.href = canvas.toDataURL("image/png");
         link.click();
-    };
 
-    img.onerror = function () {
-        errorMsg("Failed to load background image due to CORS.");
-    };
+        successMsg("Image downloaded!");
+    }).catch(err => {
+        errorMsg("Download failed!");
+        console.error(err);
+    });
 }
 
 

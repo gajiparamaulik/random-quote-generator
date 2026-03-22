@@ -1,4 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2f, #2b5876);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Card */
+.quote-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+}
+
+/* Content */
+.content {
+    position: relative;
+    padding: 30px;
+    text-align: center;
+}
+
+.quote {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.author {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Buttons */
+.actions {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.actions button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.actions button:hover {
+    background: white;
+    color: black;
+}
+
+/* Toast */
+.success-message,
+.error-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+}
+
+.success-message {
+    background: #28a745;
+}
+
+.error-message {
+    background: #dc3545;
+}
+
+.success-message.show,
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 body {
     font-family: "Nunito", sans-serif;
@@ -248,4 +367,4 @@ nav a {
 
 .error-message.show {
     right: 20px;
-}
+} */

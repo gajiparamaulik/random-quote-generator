@@ -9,7 +9,26 @@
     <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 <body>
-    <header>
+    <main class="container">
+        <h1 class="title">✨ Quote Generator</h1>
+
+        <div class="quote-card" id="myDiv">
+            <div class="overlay"></div>
+
+            <div class="content" id="quoteData">
+                <p class="quote" id="setQuote">Loading...</p>
+                <p class="author" id="authorName"></p>
+            </div>
+
+            <div class="actions">
+                <button onclick="fetchNewQuote()">🔄 New</button>
+                <button onclick="copyToClipboard()">📋 Copy</button>
+                <button onclick="downloadQuoteImage()">⬇️ Download</button>
+                <button onclick="shareQuoteOnTwitter()">🐦 Tweet</button>
+            </div>
+        </div>
+    </main>
+    <!-- <header>
         <div class="logo">Logo</div>
         <nav>
             <a href="javascript:void(0);">Home</a>
@@ -22,9 +41,9 @@
             <button class="upgrade" href="javascript:void(0);">Upgrade</button>
             <button class="signin" href="javascript:void(0);">Sign in</button>
         </div>
-    </header>
+    </header> -->
 
-    <main>
+    <!-- <main>
         <div class="hero">
             <h1>Quote Generator</h1>
         </div>
@@ -48,7 +67,7 @@
         </div>
 
         </div>
-    </main>
+    </main> -->
 
     <script src="./assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
