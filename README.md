@@ -26,10 +26,6 @@
 
 - A success message is displayed confirming the copy action.
 
-
-## 📸 Preview
-![alt text](image.png)
-
 ## Technologies Used
 
 - HTML - Structure of the webpage.
